@@ -30,6 +30,8 @@ def update_requirements():
     sp.run(
         [
             *uv_cmd,
+            "--extra",
+            "dev",
             "--output-file",
             "requirements.txt"
         ],
