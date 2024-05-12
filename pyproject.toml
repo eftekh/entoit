@@ -1,0 +1,6 @@
+[tool.black]
+line-length = 88
+extend-exclude = "/.entoit/"
+
+[tool.isort]
+profile = "black"

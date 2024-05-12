@@ -1,0 +1,22 @@
+[project]
+name = 'entoit'
+description = 'Backend server for the entoit LLM assistant'
+requires-python = ">= 3.10"
+authors = [{name="Behzad Eftekhari", email="beftekhari@utexas.edu"}]
+dependencies = [
+    # Pinning FastAPI because it does not guarantee backwards compatibility:
+    # xref: https://fastapi.tiangolo.com/deployment/versions/
+    'fastapi ~= 0.103.2',
+    'uvicorn',
+]
+
+[project.optional-dependencies]
+dev = [
+    # Pinning black because it does not guarantee backwards comptability:
+    # xref: https://black.readthedocs.io/en/stable/the_black_code_style/index.html#stability-policy
+    'black ~= 23.10',
+    'coverage',
+    'flake8',
+    'isort',
+    'mypy',
+]
