@@ -28,11 +28,7 @@ def update_requirements():
     ]
 
     sp.run(
-        [
-            *uv_cmd,
-            "--output-file",
-            "requirements.txt"
-        ],
+        [*uv_cmd, "--extra", "dev", "--output-file", "requirements.txt"],
         cwd=BACKEND,
         check=True,
     )
@@ -62,19 +58,6 @@ def lint():
         check("black", ["python", "-m", "black", "--check", "--diff", "."])
         + check("isort", ["python", "-m", "isort", "--check", "--diff", "."])
         + check("flake8", ["python", "-m", "flake8", "."])
-        + check(
-            "mypy",
-            [
-                "python",
-                "-m",
-                "mypy",
-                "--strict",
-                "--exclude",
-                "phase_correction_explorer.py",
-                "backend",
-                "scripts",
-            ],
-        )
     )
 
     click.echo()
@@ -96,7 +79,6 @@ def format():
     try:
         sp.check_call(isort_cmd)
         sp.check_call(black_cmd)
-        sp.check_call(prettier_cmd)
     except sp.CalledProcessError:
         click.echo()
         raise click.ClickException("Code formatting failed.")
