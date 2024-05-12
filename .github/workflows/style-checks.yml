@@ -23,5 +23,6 @@ jobs:
     - name: Build environment
       run: |
         python -m pip install -r ci/requirements.txt
+        python -m pip install -r backend/requirements.txt
     - name: Run style checks
       run: python -m ci lint
