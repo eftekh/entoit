@@ -86,5 +86,12 @@ def format():
         click.secho("Done.", fg="green")
 
 
+@cli.command("backend")
+def start_backend():
+    """Start the FastAPI backend server."""
+
+    sp.run(["uvicorn", "backend.server.app:create_app", "--factory", "--reload"])
+
+
 if __name__ == "__main__":
     cli()
