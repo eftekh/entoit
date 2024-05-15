@@ -8,7 +8,15 @@ Python 3.10, Node.js 18, npm >= 9.5
 
 ## Development Tools
 
-The [`ci` module](ci/) provides a Python CLI tool for handling day-to-day development
-tasks, including setting up a development environment, applying code linting and
-formatting, and other development and deployment tasks. Usage instructions and the full
-list of `ci` commands can be found in the `ci` module [README](ci/README.md).
+* Running the `install.sh` shell script will create a Python virtual environment
+called `entoit` and dev and project dependencies. To activate the `entoit`
+venv, run:
+
+    ```shell
+    source .entoit/bin/activate
+    ```
+
+* The [`ci` module](ci/) provides a Python CLI tool for handling day-to-day development
+tasks, including code linting and formatting, running unit tests, and other development
+and deployment tasks. Usage instructions and the full list of `ci` commands can be found
+in the `ci` module [README](ci/README.md).
