@@ -8,6 +8,12 @@ dependencies = [
     # xref: https://fastapi.tiangolo.com/deployment/versions/
     'fastapi ~= 0.103.2',
     'uvicorn',
+    'langchain',
+    'langchain-openai',
+    # Starting with v2.0 urllib3 strictly requires the ssl module to be compiled
+    # with OpenSSL and does not accept Mac's default LibreSSL compilation
+    # xref: https://github.com/urllib3/urllib3/issues/2168
+    'urllib3 < 2.0',
 ]
 
 [project.optional-dependencies]
