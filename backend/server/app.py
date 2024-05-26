@@ -1,6 +1,6 @@
-from fastapi import APIRouter, FastAPI
+from fastapi import FastAPI
 
-router = APIRouter(prefix="/api/v1")
+from endpoints import router
 
 
 def create_app() -> FastAPI:
