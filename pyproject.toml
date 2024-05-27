@@ -5,3 +5,4 @@ extend-exclude = "/.entoit/"
 [tool.isort]
 profile = "black"
 line_length = 88
+skip = [".entoit/"]
